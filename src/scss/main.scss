@@ -60,9 +60,11 @@ input[type="text"] {
 .button {
   display: inline-block;
   text-decoration: none;
-  color: $clr-grey-1;
+  color: $clr-white;
   padding: 1rem;
   text-align: center;
+  border-radius: 3px;
+  background-color: $clr-primary-2;
 }
 
 @for $i from 1 to 10 {

@@ -10,6 +10,7 @@ const initialState = {
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
   const response = await axios.get('/posts');
+  console.log(response.data);
   return response.data;
 })
 
@@ -60,9 +61,10 @@ const postsSlice = createSlice({
 
 export const { postAdded, postUpdated, reactionAdded } = postsSlice.actions;
 
-export const selectAllPosts = state => state.posts.posts
+export const selectAllPosts = state => state.posts.posts;
 
-export const selectPostById = (state, postId) =>
-  state.posts.posts.find(post => post.id === postId)
+export const selectPostById = (state, postId) =>  {
+  return state.posts.posts.find(post => parseInt(post.id) === parseInt(postId));
+};
 
 export default postsSlice.reducer;
