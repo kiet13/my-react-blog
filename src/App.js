@@ -7,15 +7,17 @@ import {
 import PostsList from './features/posts/PostsList/PostsList';
 import SinglePostPage from './features/posts/SinglePostPage/SinglePostPage';
 import EditPostForm from './features/posts/EditPostForm/EditPostForm';
+import Navigation from './components/Navigation/Navigation';
+import AddPostForm from './features/posts/AddPostForm/AddPostForm';
 
 
 function App() {
   return (
     <Router>
       <div className="container">
+        <Navigation />
         <Switch>
           <Route exact path="/">
-            <h1>My blog</h1>
             <PostsList />
           </Route>
           <Route exact path="/posts/:id">
@@ -23,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/editPost/:id">
             <EditPostForm />
+          </Route>
+          <Route exact path="/addPost">
+            <AddPostForm />
           </Route>
         </Switch>
           

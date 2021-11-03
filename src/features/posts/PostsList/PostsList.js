@@ -31,8 +31,7 @@ export default function PostsList() {
   }, [postStatus, dispatch]);
 
 
-  const posts = useSelector(selectAllPosts).slice(0, 10);
-  console.log(posts);
+  const posts = useSelector(selectAllPosts);
  
 
   let content;

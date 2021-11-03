@@ -10,8 +10,7 @@ const initialState = {
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
   const response = await axios.get('/posts');
-  console.log(response.data);
-  return response.data;
+  return response.data.slice(0, 10);
 })
 
 const postsSlice = createSlice({
@@ -35,7 +34,7 @@ const postsSlice = createSlice({
     },
     postUpdated: (state, action) => {
       const {id, title, body} = action.payload;
-      const existingPost = state.posts.find(post => post.id === id);
+      const existingPost = state.posts.find(post => parseInt(post.id) === parseInt(id));
       if (existingPost) {
         existingPost.title = title;
         existingPost.body = body;

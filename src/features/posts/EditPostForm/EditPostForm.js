@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { postUpdated, selectPostById } from '../postsSlice';
-import styles from './EditPostForm.module.scss';
 
 export default function EditPostForm() {
   const { id } = useParams();
@@ -29,7 +28,7 @@ export default function EditPostForm() {
   return (
     <section >
       <h2>Edit Post</h2>
-      <form className={styles.EditPostForm}>
+      <form>
         <label htmlFor="postTitle">Post Title:</label>
         <input
           type="text"
@@ -47,9 +46,9 @@ export default function EditPostForm() {
           onChange={onContentChanged}
         />
       </form>
-      <button type="button" className="button" onClick={onSavePostClicked}>
+      <div type="button" className="button" onClick={onSavePostClicked}>
         Save Post
-      </button>
+      </div>
   </section>
   )
 }

@@ -1,0 +1,34 @@
+
+/* Navbar */
+@import "../../scss/variables";
+
+nav {
+  display: flex;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+nav section {
+  display: block;
+  width: 100%;
+  height: 8rem;
+  background-color: $clr-grey-2;
+  position: relative;
+}
+
+nav section h1 {
+  color: $clr-white;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.NavLink {
+  position: absolute;
+  bottom: 0;
+  right: 3rem;
+  color: $clr-white;
+
+  & > * {
+    margin-right: 1rem;
+  }
+}
