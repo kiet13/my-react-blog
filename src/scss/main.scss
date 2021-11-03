@@ -42,11 +42,12 @@ a {
   width: initial;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
   border: none;
   outline: none;
   border-radius: .3rem;
-  background-color: $clr-grey-10;
+  background-color: $clr-white;
   font: inherit;
   font-size: 1.8rem;
   padding: .8rem 1.6rem;

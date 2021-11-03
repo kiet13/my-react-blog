@@ -22,23 +22,23 @@ const postsSlice = createSlice({
       reducer(state, action) {
         state.posts.push(action.payload);
       },
-      prepare(title, content, userId) {
+      prepare(title, body, userId) {
         return {
           payload: {
             id: nanoid(),
             title,
-            content,
+            body,
             user: userId
           }
         }
       }
     },
     postUpdated: (state, action) => {
-      const {id, title, content} = action.payload;
+      const {id, title, body} = action.payload;
       const existingPost = state.posts.find(post => post.id === id);
       if (existingPost) {
         existingPost.title = title;
-        existingPost.content = content;
+        existingPost.body = body;
       }
     },
   },

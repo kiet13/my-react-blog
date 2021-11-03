@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import PostsList from './features/posts/PostsList/PostsList';
 import SinglePostPage from './features/posts/SinglePostPage/SinglePostPage';
+import EditPostForm from './features/posts/EditPostForm/EditPostForm';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route exact path="/posts/:id">
             <SinglePostPage />
+          </Route>
+          <Route exact path="/editPost/:id">
+            <EditPostForm />
           </Route>
         </Switch>
           
